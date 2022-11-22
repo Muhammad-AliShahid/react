@@ -1,0 +1,21 @@
+# Build the project
+
+mvn clean package
+
+# Run the application
+
+java -jar payara-micro.jar target/challenge2.war
+
+Put the full path in front of 'payara-micro.jar' where you have placed the Payara Micro download and use the full path of the 'formPF.war' location.
+
+# Test
+
+Use the following URL in your browser
+
+http://localhost:8080/challenge2/protected/main.xhtml
+
+And use the one of the following credentials in the dialog
+
+rudy/secret1 -> Access
+user/pw  -> No access (403) since it does not have the role/group _foo_ but only _bar_.
+

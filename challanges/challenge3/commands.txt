@@ -1,0 +1,36 @@
+There are 2 parts for challenge 3
+
+- Service A: Contains the login screen and calls a remote service = Service B
+- Service B: Endpoint that required JWT token authentication.
+
+
+
+# Build the project
+
+In both directories service-a and service-b execute
+
+mvn clean package
+
+
+# Run the service-b
+
+java -jar payara-micro.jar --port 8180 target/service-b.war
+
+Put the full path in front of 'payara-micro.jar' where you have placed the Payara Micro download and use the full path of the 'service-b.war' location.
+
+# Run the service-a
+
+java -jar payara-micro.jar target/service-a.war
+
+Put the full path in front of 'payara-micro.jar' where you have placed the Payara Micro download and use the full path of the 'service-a.war' location.
+
+# Test
+
+Use the following URL in your browser
+
+http://localhost:8080/service-a/protected/main.xhtml
+
+And use the one of the following credentials in the dialog
+
+rudy/secret1 -> And see the result of the remote call.
+
